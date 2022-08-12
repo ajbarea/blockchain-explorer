@@ -1,5 +1,10 @@
 # Blockchain Explorer - Requirements 
+
+
 ---
+
+[Blockchain Explorer Demo](https://www.youtube.com/playlist?list=PLmQVFU1FBDddVvJjHuwnRp6F6vwmz01X8)
+
 ---
 ## (PS.1): Can a private blockchain system be implemented to certify transactions and documents signed via the DocBridge.io user interface? 
 
@@ -14,8 +19,9 @@ Acceptance criteria:
 Acceptance criteria: 
   - a) Blockchain exploration is restricted to admin user accounts that are both authenticated through Google oAuthentication and within the “admin_user” database table. 
   - b) New blocks may only be committed by privileged instances committing to the database. Requirements: PhiQuest Project (1.03) March 30, 2022 
+
 ---
----
+
 ## (PS.2): Can an administration user interface be implemented so that operations personnel can visualize Docbridge.io metrics, perform user administration, and log selective events and transactions? 
 
 ### 1) As an administrator I want a back-end administration interface for the DocBridge.io system so that I can edit information of users that are using DocBridge.io. 
