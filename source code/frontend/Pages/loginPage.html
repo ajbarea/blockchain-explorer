@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docbridge.io Login</title>
+    <link rel="stylesheet" href= '/styling/login.css'>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
+</head>
+<body>
+    <div class = "login-div">
+        <div class = "logo"><img id = "docBridge" src = "/img/Drocbridge.io (Dark).png"/></div>
+        <div class = "title">Docbridge.io</div>
+        <div class = "subtitle">Admin Dashboard</div>
+        <div class = "form">
+            <div class = "username"><ion-icon name="person-outline"></ion-icon>
+                <input id = "adminEmail" type = "text" placeholder = "Email">
+            </div>
+            <div class = "password"><ion-icon name="lock-closed-outline"></ion-icon>
+                <input id = "adminPassword" type = "password" placeholder = "Password">
+            </div>
+            <a id = "result" style="color:#DC143C">Invalid Email or Password</a>
+            <div class = "guestLogin" id = "guestLogin">
+                <a class = "guestText">Login as Guest</a>
+            </div>
+            <div class="altLogin-btn" id = "altLogin-btn">
+                <p class="log-btn-text"><b>Login</b></p>
+            </div>
+        <div class="google-btn" id = "signIn">
+            <div class="google-icon-wrapper">
+                <img class="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"/>
+            </div>
+            <p class="btn-text"><b>Sign in with Google</b></p>
+        </div>
+        </div>
+    </div>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script type = "module" src = '/login.js'></script>
+</body>
+</html>

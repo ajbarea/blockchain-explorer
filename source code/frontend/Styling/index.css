@@ -1,0 +1,536 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+:root {
+    --blue: #3A8EE3;
+    --white: #fff;
+    --grey: #f5f5f5;
+    --black1: #222;
+    --black2: #999;
+}
+body
+{
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+.container
+{
+    position: relative;
+    width: 100%;
+}
+.navigation
+{
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    background: #38733C;
+    border-left: 10px solid #38733C;
+    transition: 0.5s;
+    overflow: hidden;
+}
+.navigation.active
+{
+    width: 80px;
+}
+.navigation ul
+{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+}
+.navigation ul li
+{
+    position: relative;
+    width: 100%;
+    list-style: none;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+.navigation ul li:hover,
+.navigation ul li.hovered
+{
+    background: #fff;
+}
+.navigation ul li:nth-child(1)
+{
+    margin-bottom: 40px;
+    pointer-events: none;
+}
+.navigation ul li a
+{
+    position: relative;
+    display:block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: #fff;
+}
+.navigation ul li:hover a,
+.navigation ul li.hovered a
+{
+    color: #308937;
+}
+.navigation ul li a .icon
+{
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 70px;
+    text-align: center;
+}
+.navigation ul li a .icon ion-icon
+{
+    font-size: 1.75em;
+}
+.navigation ul li a .title
+{
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    text-align: start;
+    white-space: nowrap;
+}
+.navigation ul li:hover a::before,
+.navigation ul li.hovered a::before
+{
+    content: '';
+    position: absolute;
+    right: 0;
+    top: -50px;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border-radius: 50%;
+    box-shadow: 35px 35px 0 10px #fff;
+    pointer-events: none;
+}
+.navigation ul li:hover a::after,
+.navigation ul li.hovered a::after
+{
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -50px;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border-radius: 50%;
+    box-shadow: 35px -35px 0 10px #fff;
+    pointer-events: none;
+}
+.main
+{
+    min-width: 1000px;
+    position: absolute;
+    width: calc(100% - 300px);
+    left: 300px;
+    min-height: 100vh;
+    background: #fff;
+    transition: 0.5s;
+}
+.main.active
+{
+    width: calc(100% - 80px);
+    left: 80px;
+}
+.topBar
+{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+.toggle
+{
+    position: relative;
+    top:0;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5em;
+    cursor: pointer;
+}
+h1
+{
+    font-weight: 600;
+    color: #38733C;
+    Margin-left: 20px;
+}
+input[type = "file"]
+{
+    display: none;
+}
+label
+{
+    color: #38733C;
+    height: 60px;
+    width: 155px;
+    background-color: #fff;
+    position: relative;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 30%;
+}
+label:hover
+{
+    opacity: 70%;
+}
+label ion-icon
+{
+    font-size: 1.25em;
+    padding-right: 10px;
+}
+.btnCheck
+{
+    color: #38733C;
+    height: 50px;
+    width: 150px;
+    position: relative;
+    border-color: #38733C;
+    border-width: 2px;
+    margin-left: 30%;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    font-size: 20px;
+}
+.btnUpdate
+{
+    position: relative;
+    color: #38733C;
+    height: 50px;
+    width: 200px;
+    border-color: #38733C;
+    border-width: 2px;
+    font-size: 20px;
+    margin-left:20%;
+}
+.btnUpdate:hover
+{
+    opacity: 70%;
+    cursor: pointer;
+}
+.btnCheck:hover
+{
+    opacity: 70%;
+    cursor: pointer;
+}
+.foundHash
+{
+    color: #38733C;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+.notFound
+{
+    color: #d9534f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+.searchBar input[type=text] {
+    margin-top: 20px;
+    margin-left: 15%;
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 50%;
+    background: #f1f1f1;
+}
+
+/* Style the submit button */
+.searchBar button {
+    margin-top: 20px;
+    width: 20%;
+    padding: 9px;
+    background: #38733C;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none; /* Prevent double borders */
+    cursor: pointer;
+}
+
+.searchBar button:hover {
+    opacity: 80%;
+}
+
+/* Clear floats */
+
+table, th tr
+{
+
+    margin-top: 20px;
+    margin-left: 50px;
+    width: 90%;
+    border-radius: 10px;
+    border: 1px solid #38733C;
+    color: #38733C;
+    padding: 20px 20px 20px 20px;
+    text-align: left;
+    display: none;
+}
+
+
+.searchNotFound
+{
+    margin-top: 20px;
+    color: #d9534f;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+.tableNav button
+{
+    padding-top: 2px;
+    margin-top: 10px;
+    position: relative;
+    color: #38733C;
+    height: 30px;
+    width: 30px;
+    border-color: #38733C;
+    border-width: 2px;
+    font-size: 20px;
+    margin-left:85%;
+    margin-bottom: 10px;
+}
+.tableNav button:hover
+{
+    opacity: 80%;
+    cursor: pointer;
+}
+.searchNav button
+{
+    padding-top: 2px;
+    margin-top: 10px;
+    position: relative;
+    color: #38733C;
+    height: 30px;
+    width: 30px;
+    border-color: #38733C;
+    border-width: 2px;
+    font-size: 20px;
+    margin-left:85%;
+    margin-bottom: 10px;
+}
+.searchNav button:hover
+{
+    opacity: 80%;
+    cursor: pointer;
+}
+#nextPage, #nextBlock, #nextLog, #nextSearch, #nextGroups, #nextWorkflows
+{
+    margin-left: 10px;
+    display: none;
+}
+#previousPage, #previousBlock, #previousLog, #previousSearch, #previousGroups, #previousWorkflows
+{
+    display: none;
+}
+.aTable button
+{
+    height: 50px;
+    width: 50px;
+    padding: 9px;
+    background: white;
+    color: #38733C;
+    font-size: 17px;
+    border: 1px solid #38733C;
+    cursor: pointer;
+    float: right;
+    margin-right: 50px;
+}
+.aTable button:hover
+{
+    background:#38733C;
+    color: white;
+}
+table button ion-icon
+{
+    pointer-events: none;
+    font-size: 1.5em;
+}
+#addAccount
+{
+    font-size: 2em;
+    border: none;
+    float: right;
+    margin-right: 50px;
+}
+#addAccount:hover
+{
+    background: white;
+    color: #38733C;
+    opacity: 50%;
+}
+.modal-body label
+{
+    margin-left: 30px;
+    margin-bottom: 0px;
+}
+.modal-body input[type=text]
+{
+    margin-left: 30px;
+    margin-top: 0px;
+}
+.modal-body input[type=password]
+{
+    margin-left: 30px;
+    margin-top: 0px;
+}
+.modal-body label:hover
+{
+    opacity: 100%;
+}
+#weekChart, #chart
+{
+    margin-left: 10%;
+    display: none;
+}
+.chartButton
+{
+    postion: relative;
+    padding: 20px;
+}
+.cardBox
+{
+    postion: relative;
+    margin-left: 25%;
+    width: 50%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 100px;
+}
+.cardBox .card
+{
+    postion: relative;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+}
+.cardBox .card .numbers
+{
+    position: relative;
+    font-weight: 500;
+    font-size: 2.5em;
+    color: #38733C;
+}
+.cardBox .card .cardName
+{
+    color: gray;
+    font-size: 1.1em;
+    margin-top: 5px;
+}
+.cardBox .card .cardIcon
+{
+    font-size: 3.5em;
+    color: gray;
+}
+.cardBox .card:hover
+{
+    background: #38733C;
+}
+.cardBox .card:hover .numbers,
+.cardBox .card:hover .cardName,
+.cardBox .card:hover .cardIcon
+{
+    color: white;
+}
+
+.chartCard
+{
+    postion: relative;
+    margin-left: 35%;
+    width:30%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+}
+.chartCard .card
+{
+    postion: relative;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+}
+.chartCard .card .cardName
+{
+    color: gray;
+    font-size: 1.1em;
+    margin-top: 5px;
+}
+.chartCard .card .cardIcon
+{
+    font-size: 2em;
+    color: gray;
+}
+.chartCard .card:hover
+{
+    background: #38733C;
+}
+.chartCard .card:hover .numbers,
+.chartCard .card:hover .cardName,
+.chartCard .card:hover .cardIcon
+{
+    color: white;
+}
+.userBtnCheck
+{
+    color: #38733C;
+    height: 50px;
+    width: 150px;
+    position: relative;
+    border-color: #38733C;
+    border-width: 2px;
+    margin-left: 40%;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    font-size: 20px;
+}
+.userBtnCheck:hover
+{
+    opacity: 70%;
+    cursor: pointer;
+}
+.userLabel
+{
+    margin-left: 40%;
+}
+#recentDoc0, #recentDoc1, #recentDoc2, #recentDoc3, #recentDoc4:hover
+{
+    cursor: pointer;
+}

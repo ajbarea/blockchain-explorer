@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Docbridge.io Administrators</title>
+    <link rel="stylesheet" href='/styling/index.css'>
+    <link rel="stylesheet" href='/styling/bootstrap-iso.css'>
+</head>
+<body>
+<script type = "module" src = '/signOut.js'></script>
+<div class = "container">
+    <div class = "navigation">
+        <ul>
+            <li>
+                <a href="#">
+
+                    <span class ="icon"><ion-icon name="home-outline"></ion-icon></span>
+                    <span class = "title">Docbridge.io</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" onclick= "window.location.href='MetricsPage'">
+                    <span class ="icon"><ion-icon name="stats-chart-outline"></ion-icon></span>
+                    <span class = "title">Metrics</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" onclick= "window.location.href='AdminPage'">
+                    <span class ="icon"><ion-icon name="folder-open-outline"></ion-icon></span>
+                    <span class = "title">Admin Management</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" onclick= "window.location.href='UsersPage'">
+                    <span class ="icon"><ion-icon name="people-outline"></ion-icon></span>
+                    <span class = "title">Users</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" onclick= "window.location.href='TransactionPage'">
+                    <span class ="icon"><ion-icon name="newspaper-outline"></ion-icon></span>
+                    <span class = "title">Transaction View</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" onclick= "window.location.href='BlockchainExpPage'">
+                    <span class ="icon"><ion-icon name="planet-outline"></ion-icon></span>
+                    <span class = "title">Blockchain Explorer</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" id = "signOut">
+                    <span class ="icon"><ion-icon name="log-out-outline"></ion-icon></span>
+                    <span class = "title">Sign Out</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="main">
+        <div class="topBar">
+            <div class="toggle">
+                <ion-icon name="list-outline"></ion-icon>
+            </div>
+        </div>
+        <div class="info">
+            <h1>Admin Management</h1>
+        </div>
+        <div class="bootstrap-iso">
+            <!-- Any HTML here will be styled with Bootstrap CSS -->
+            <div class="modal" tabindex="-1" role="dialog" id = "addAccountModal">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Add an Admin Account</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close" id = "closeAddAccountModal">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <label><b>Email</b></label>
+                            <input id = "email" type="text" placeholder="Enter Email" name="email" required>
+
+                            <label><b>First Name</b></label>
+                            <input id = "firstname" type="text" placeholder="Enter First Name" name="firstname" required>
+
+                            <label><b>Last Name</b></label>
+                            <input id = "lastname" type="text" placeholder="Enter Last Name" name="lastname" required>
+
+                            <label><b>Password</b></label>
+                            <input id = "password" type="password" placeholder="Enter Password" name="password" required>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" id = "createAdminAccount">Create Account</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal" id = closeAddAccount>Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal" tabindex="-1" role="dialog" id = "editAccountModal">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Edit An Admin Account</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close" id = "closeEditAccountModal">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <label><b>Email</b></label>
+                            <input id = "editEmail" type="text" placeholder="" name="email" required>
+
+                            <label><b>First Name</b></label>
+                            <input id = "editFirstname" type="text" placeholder="" name="firstname" required>
+
+                            <label><b>Last Name</b></label>
+                            <input id = "editLastname" type="text" placeholder="" name="lastname" required>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" id = "editAdminAccount">Edit Account</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal" id = closeEditAccount>Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal" tabindex="-1" role="dialog" id = "deleteAccountModal">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Are You Sure You Want to Delete The Account?</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close" id = "closeDeleteAccountModal">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" id = "deleteAdminAccount">Delete Account</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal" id = closeDeleteAccount>Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <table id = "adminTable" class = "aTable">
+            <tr>
+                <th class = "tableTitle" style = "font-size: 20px;">Admin Accounts<br></br></th>
+                <th></th>
+                <th></th>
+                <th><button id = "addAccount" title = "Add Admin Account"><ion-icon name="add-circle-outline"></ion-icon></button></th>
+            </tr>
+            <tr height = "50px">
+                <th style = "width: 20%">Email<br></br></th>
+                <th style = "width: 20%">First Name<br></br></th>
+                <th style = "width: 20%">Last Name<br></br></th>
+                <th style = "width: 40%"></th>
+            </tr>
+            <tr>
+                <td id = "email0"></td>
+                <td id = "firstname0"></td>
+                <td id = "lastname0"></td>
+                <td id = "button0"></td>
+            </tr>
+            <tr>
+                <td id = "email1"></td>
+                <td id = "firstname1"></td>
+                <td id = "lastname1"></td>
+                <td id = "button1"></td>
+            </tr>
+            <tr>
+                <td id = "email2"></td>
+                <td id = "firstname2"></td>
+                <td id = "lastname2"></td>
+                <td id = "button2"></td>
+            </tr>
+            <tr>
+                <td id = "email3"></td>
+                <td id = "firstname3"></td>
+                <td id = "lastname3"></td>
+                <td id = "button3"></td>
+            </tr>
+            <tr>
+                <td id = "email4"></td>
+                <td id = "firstname4"></td>
+                <td id = "lastname4"></td>
+                <td id = "button4"></td>
+            </tr>
+        </table>
+        <div class = "tableNav" id = "tableNav">
+            <button class = "previous" id = "previousPage"><ion-icon name="chevron-back-outline"></ion-icon></button>
+            <button class = "next" id = "nextPage"><ion-icon name="chevron-forward-outline"></ion-icon></button>
+        </div>
+    </div>
+</div>
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<script type = "module" src = '/admin.js'></script>
+<script>
+    let toggle = document.querySelector('.toggle');
+    let navigation = document.querySelector('.navigation');
+    let main = document.querySelector('.main');
+
+    toggle.onclick = function()
+    {
+        navigation.classList.toggle('active');
+        main.classList.toggle('active');
+    }
+</script>
+<script>
+    let list = document.querySelectorAll('.navigation li');
+    function activeLink(){
+        list.forEach((item) =>
+            item.classList.remove('hovered'));
+        this.classList.add('hovered');
+    }
+    list.forEach((item) =>
+        item.addEventListener('mouseover', activeLink));
+</script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+body
+{
+    background-color: #202123;
+}
+.login-div
+{
+    margin: 100px auto;
+    width: 350px;
+    border-radius: 30%;
+    background-color: #fff;
+    padding: 60px;
+}
+.logo
+{
+    width: 300px;
+    height: 120px;
+    margin-top: 50px;
+    margin-left: 40px;
+    margin-bottom: 30px;
+
+}
+.login-div .logo img
+{
+    width: 280px;
+    height: 109px;
+    color: #fff;
+}
+.title, .subtitle
+{
+    text-align: center;
+}
+.title
+{
+    color: #308937;
+    font-weight: bolder;
+    font-size: 35px;
+}
+.subtitle
+{
+    color: #202123;
+    font-size: 18px;
+    font-weight: bold;
+}
+.google-btn {
+    margin-left: 30px;
+    margin-top: 15px;
+    width: 290px;
+    height: 58px;
+    background-color: #308937;
+    border-radius: 2px;
+    box-shadow: 0 3px 4px 0 rgba(0, 0, 0, .25);
+    margin-bottom: 30px;
+}
+.btn-text {
+    float: right;
+    margin: 11px 11px 0 0;
+    color: #fff;
+    font-size: 25px;
+}
+.google-btn:hover
+{
+    opacity: 80%;
+    cursor: pointer;
+}
+
+.guestLogin
+{
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+.guestText
+{
+    color: #308937;
+}
+.guestLogin:hover
+{
+    cursor: pointer;
+}
+.form
+{
+    width: 100%;
+    margin-top: 30px;
+    text-align: center;
+}
+.form input
+{
+    font-size: 18px;
+    padding: 10px 40px 10px 5px;
+    border: none;
+    outline: none;
+    background: none;
+}
+.google-icon-wrapper {
+    position: absolute;
+    margin-top: 1px;
+    margin-left: 1px;
+    width: 56px;
+    height: 56px;
+    border-radius: 2px;
+    background-color: #fff;;
+}
+.google-icon {
+    position: relative;
+    margin-top: 11px;
+    width: 36px;
+    height: 36px;
+}
+.username, .password
+{
+    display: block;
+    border-radius: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    margin: 10px 0;
+}
+.log-btn-text {
+    padding-top: 10px;
+    margin: 11px 11px 0 0;
+    color: #fff;
+    font-size: 25px;
+}
+.altLogin-btn
+{
+    margin-left: 30px;
+    margin-top: 20px;
+    width: 290px;
+    height: 58px;
+    background-color: #308937;
+    border-radius: 2px;
+    box-shadow: 0 3px 4px 0 rgba(0, 0, 0, .25);
+}
+.altLogin-btn:hover
+{
+    opacity: 80%;
+    cursor: pointer;
+}
