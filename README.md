@@ -3,7 +3,7 @@
 
 ---
 
-[Blockchain Explorer Demo](https://www.youtube.com/playlist?list=PLmQVFU1FBDddVvJjHuwnRp6F6vwmz01X8)
+[Introducing the Administrator Blockchain Explorer](https://www.youtube.com/playlist?list=PLmQVFU1FBDddVvJjHuwnRp6F6vwmz01X8)
 
 ---
 ## (PS.1): Can a private blockchain system be implemented to certify transactions and documents signed via the DocBridge.io user interface? 
