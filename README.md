@@ -21,6 +21,7 @@ Acceptance criteria:
   - b) New blocks may only be committed by privileged instances committing to the database. Requirements: PhiQuest Project (1.03) March 30, 2022 
 
 ---
+---
 
 ## (PS.2): Can an administration user interface be implemented so that operations personnel can visualize Docbridge.io metrics, perform user administration, and log selective events and transactions? 
 
