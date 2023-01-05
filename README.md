@@ -1,4 +1,4 @@
-# Blockchain Explorer - Requirements 
+# Blockchain Explorer
 
 
 ---
